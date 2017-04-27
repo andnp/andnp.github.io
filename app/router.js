@@ -14,4 +14,8 @@ Router.map(function() {
   this.route('blog');
 });
 
+Router.reopen({
+  location: 'hash'
+});
+
 export default Router;
