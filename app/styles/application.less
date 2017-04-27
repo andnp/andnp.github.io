@@ -56,22 +56,35 @@
 	
 }
 
-#menu .menuitem {
+.menumixin {
 	float: left;
-	height: 36px;
 	display: block;
 	text-align: center;
 	text-decoration: none;
 	color: #ffffff;
 	font-weight: bold;
-	padding-top: 18px;
 	font-size: 15px;
 	padding-left:13px;
 	padding-right:13px;
 	border-radius: 20px;
 }
 
-#menu a:hover {
+#menu .menubutton {
+	height: 54px;
+	.menumixin;
+}
+
+#menu .menuitem {
+	height: 36px;
+	padding-top: 18px;
+	.menumixin;
+}
+
+#menu .menuitem:hover {
+	background-color: #5B5B5B;
+}
+
+#menu .menubutton:hover {
 	background-color: #5B5B5B;
 }
 
