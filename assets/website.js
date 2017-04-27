@@ -242,6 +242,10 @@ define('website/router', ['exports', 'ember', 'website/config/environment'], fun
     this.route('blog');
   });
 
+  Router.reopen({
+    location: 'hash'
+  });
+
   exports['default'] = Router;
 });
 define('website/routes/about', ['exports', 'ember'], function (exports, _ember) {
