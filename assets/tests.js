@@ -122,6 +122,60 @@ define('website/tests/router.lint-test', ['exports'], function (exports) {
     assert.ok(false, 'router.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
+define('website/tests/routes/about.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/about.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/about.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/routes/blog.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/blog.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/blog.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/routes/cv.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/cv.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/cv.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/routes/home.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/home.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/home.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/routes/index.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/index.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/index.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/routes/projects.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/projects.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/projects.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
 define('website/tests/test-helper', ['exports', 'website/tests/helpers/resolver', 'ember-qunit'], function (exports, _websiteTestsHelpersResolver, _emberQunit) {
 
   (0, _emberQunit.setResolver)(_websiteTestsHelpersResolver['default']);
@@ -133,6 +187,132 @@ define('website/tests/test-helper.lint-test', ['exports'], function (exports) {
   QUnit.test('should pass ESLint', function (assert) {
     assert.expect(1);
     assert.ok(false, 'test-helper.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/about-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:about', 'Unit | Route | about', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/about-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/about-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/about-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/blog-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:blog', 'Unit | Route | blog', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/blog-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/blog-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/blog-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/cv-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:cv', 'Unit | Route | cv', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/cv-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/cv-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/cv-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/home-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:home', 'Unit | Route | home', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/home-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/home-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/home-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/index-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:index', 'Unit | Route | index', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/index-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/index-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/index-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/projects-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:projects', 'Unit | Route | projects', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/projects-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/projects-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/projects-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
 require('website/tests/test-helper');
