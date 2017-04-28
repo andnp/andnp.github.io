@@ -1,3 +1,4 @@
+@import "variables";
 body {
 	margin: 0;
 	padding: 0;
@@ -5,7 +6,7 @@ body {
 	font: 12px Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #061C37;
-	background: #6B6B6B;
+	background: @background-color;
 }
 
 * {
@@ -28,3 +29,4 @@ p {
 
 @import "application";
 @import "home";
+@import "components/content-container";
