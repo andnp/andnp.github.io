@@ -18,6 +18,15 @@ define('website/tests/components/content-container.lint-test', ['exports'], func
     assert.ok(false, 'components/content-container.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
+define('website/tests/components/project-square.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - components/project-square.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/project-square.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
 define('website/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
 
@@ -149,6 +158,44 @@ define('website/tests/integration/components/content-container-test.lint-test', 
   QUnit.test('should pass ESLint', function (assert) {
     assert.expect(1);
     assert.ok(false, 'integration/components/content-container-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/integration/components/project-square-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('project-square', 'Integration | Component | project square', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      'id': 'lDUwuqUz',
+      'block': '{"statements":[["append",["unknown",["project-square"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      'id': '1UXpGVQy',
+      'block': '{"statements":[["text","\\n"],["block",["project-square"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('website/tests/integration/components/project-square-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - integration/components/project-square-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'integration/components/project-square-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
 define('website/tests/resolver.lint-test', ['exports'], function (exports) {
