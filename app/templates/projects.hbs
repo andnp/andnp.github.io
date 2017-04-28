@@ -1,1 +1,5 @@
-{{outlet}}
+<div class="project-container">
+{{#each model as |project|}}
+{{#project-square data=project}}{{/project-square}}
+{{/each}}
+</div>
