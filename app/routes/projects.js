@@ -26,6 +26,12 @@ export default Ember.Route.extend({
                 name: "TravianBot",
                 image: "knight.jpg",
                 description: "A bot relying on machine learning to automate game play for the MMO game Travian. Used ML to predict market prices, quality of attacks, and budgeting of resources."
+            },
+            {
+                link: "https://github.com/andnp/B565",
+                name: "Data Mining",
+                image: "house.png",
+                description: "Final project for the graduate Data Mining course at IU. Contains sample writings during my undergrad reporting on data analysis for click prediction and house market modelling."
             }
         ]
     }
