@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('cv');
   this.route('projects');
   this.route('blog');
+  this.route('datasets');
 });
 
 Router.reopen({
