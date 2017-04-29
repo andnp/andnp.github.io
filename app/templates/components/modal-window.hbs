@@ -1,6 +1,6 @@
 {{#if show}}
 <div {{action "closeWindow"}} class="modal-dim">
-<div class="modal-window">
+<div {{action "noop" bubbles=false}} class="modal-window">
     {{yield}}
 </div>
 </div>

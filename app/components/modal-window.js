@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     actions: {
         closeWindow: function() {
             this.toggleProperty('show');
-        }
+        },
+        noop: function(){}
     }
 });

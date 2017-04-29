@@ -35,19 +35,21 @@
 
 #menu {
 	display:block;
-	float:left;
 	clear:both;
 	width: 100%;
 	height:54px;
-	float:left;
 	clear:both;
 }
 
 #menu ul {
+	overflow: auto;
 	list-style: none;
 	padding: 0px;
 	margin-left:auto;
 	width: 100%;
+	white-space: nowrap;
+	display: block;	
+	height: 54px;
 }
 
 #menu li {
@@ -58,8 +60,6 @@
 }
 
 .menumixin {
-	float: left;
-	display: block;
 	text-align: center;
 	text-decoration: none;
 	color: #ffffff;
@@ -68,6 +68,7 @@
 	padding-left:13px;
 	padding-right:13px;
 	border-radius: 20px;
+	display: inline-block;
 }
 
 #menu .menubutton {
@@ -79,6 +80,10 @@
 	height: 36px;
 	padding-top: 15px;
 	.menumixin;
+}
+
+#menu .download-form {
+	display: inline-block;
 }
 
 #menu .menuitem:hover {

@@ -31,11 +31,13 @@
             <div class="horizontal-line"></div>
             <div class="data-description">
                 <p>{{data.description}}</p>
+                <br>
+                <p>{{data.file_description}}</p>
             </div>
         </div>
         <div class="modal-button-container">
-            <button class="data-download">Download</button>
-            <button class="data-download">Github</button>            
+            <button {{action "clickDownload" bubbles=false}} class="data-download">Download</button>
+            <button {{action "clickGithub" bubbles=false}} class="data-download">Github</button>            
         </div>
     </div>
 {{/modal-window}}

@@ -9,6 +9,14 @@ export default Ember.Component.extend({
         },
         selectTag: function() {
             return false;
+        },
+        clickDownload: function() {
+            let data = this.get('data');
+            window.location = data.location;
+        },
+        clickGithub: function() {
+            let data = this.get('data');
+            window.location = data.url;
         }
     }
 });
