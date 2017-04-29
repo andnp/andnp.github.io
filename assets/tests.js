@@ -18,6 +18,24 @@ define('website/tests/components/content-container.lint-test', ['exports'], func
     assert.ok(false, 'components/content-container.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
+define('website/tests/components/dataset-square.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - components/dataset-square.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/dataset-square.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/components/modal-window.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - components/modal-window.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/modal-window.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
 define('website/tests/components/project-square.lint-test', ['exports'], function (exports) {
   'use strict';
 
@@ -160,6 +178,82 @@ define('website/tests/integration/components/content-container-test.lint-test', 
     assert.ok(false, 'integration/components/content-container-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
+define('website/tests/integration/components/dataset-square-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('dataset-square', 'Integration | Component | dataset square', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      'id': '3sTS50D8',
+      'block': '{"statements":[["append",["unknown",["dataset-square"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      'id': 'VyVdUphB',
+      'block': '{"statements":[["text","\\n"],["block",["dataset-square"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('website/tests/integration/components/dataset-square-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - integration/components/dataset-square-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'integration/components/dataset-square-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/integration/components/modal-window-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('modal-window', 'Integration | Component | modal window', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      'id': 'WYIjlv9G',
+      'block': '{"statements":[["append",["unknown",["modal-window"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      'id': 'ulcuO/QR',
+      'block': '{"statements":[["text","\\n"],["block",["modal-window"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('website/tests/integration/components/modal-window-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - integration/components/modal-window-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'integration/components/modal-window-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
 define('website/tests/integration/components/project-square-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleForComponent)('project-square', 'Integration | Component | project square', {
@@ -241,6 +335,15 @@ define('website/tests/routes/cv.lint-test', ['exports'], function (exports) {
   QUnit.test('should pass ESLint', function (assert) {
     assert.expect(1);
     assert.ok(false, 'routes/cv.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/routes/datasets.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - routes/datasets.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'routes/datasets.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
 define('website/tests/routes/home.lint-test', ['exports'], function (exports) {
@@ -344,6 +447,27 @@ define('website/tests/unit/routes/cv-test.lint-test', ['exports'], function (exp
   QUnit.test('should pass ESLint', function (assert) {
     assert.expect(1);
     assert.ok(false, 'unit/routes/cv-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
+  });
+});
+define('website/tests/unit/routes/datasets-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:datasets', 'Unit | Route | datasets', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('website/tests/unit/routes/datasets-test.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('ESLint - unit/routes/datasets-test.js');
+  QUnit.test('should pass ESLint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/datasets-test.js should pass ESLint.\n1:1  - Parsing error: The keyword \'import\' is reserved (null)');
   });
 });
 define('website/tests/unit/routes/home-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
