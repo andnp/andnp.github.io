@@ -139,8 +139,7 @@ define('website/initializers/container-debug-adapter', ['exports', 'ember-resolv
     }
   };
 });
-define('website/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
-
+define('website/initializers/data-adapter', ['exports'], function (exports) {
   /*
     This initializer is here to keep backwards compatibility with code depending
     on the `data-adapter` initializer (before Ember Data was an addon).
@@ -154,7 +153,7 @@ define('website/initializers/data-adapter', ['exports', 'ember'], function (expo
     initialize: function initialize() {}
   };
 });
-define('website/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/-private/core'], function (exports, _emberDataSetupContainer, _emberDataPrivateCore) {
+define('website/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/index'], function (exports, _emberDataSetupContainer, _emberDataIndex) {
 
   /*
   
@@ -239,8 +238,7 @@ define('website/initializers/export-application-global', ['exports', 'ember', 'w
     initialize: initialize
   };
 });
-define('website/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
-
+define('website/initializers/injectStore', ['exports'], function (exports) {
   /*
     This initializer is here to keep backwards compatibility with code depending
     on the `injectStore` initializer (before Ember Data was an addon).
@@ -254,8 +252,7 @@ define('website/initializers/injectStore', ['exports', 'ember'], function (expor
     initialize: function initialize() {}
   };
 });
-define('website/initializers/store', ['exports', 'ember'], function (exports, _ember) {
-
+define('website/initializers/store', ['exports'], function (exports) {
   /*
     This initializer is here to keep backwards compatibility with code depending
     on the `store` initializer (before Ember Data was an addon).
@@ -269,8 +266,7 @@ define('website/initializers/store', ['exports', 'ember'], function (exports, _e
     initialize: function initialize() {}
   };
 });
-define('website/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
-
+define('website/initializers/transforms', ['exports'], function (exports) {
   /*
     This initializer is here to keep backwards compatibility with code depending
     on the `transforms` initializer (before Ember Data was an addon).
@@ -284,10 +280,10 @@ define('website/initializers/transforms', ['exports', 'ember'], function (export
     initialize: function initialize() {}
   };
 });
-define("website/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
+define("website/instance-initializers/ember-data", ["exports", "ember-data/instance-initializers/initialize-store-service"], function (exports, _emberDataInstanceInitializersInitializeStoreService) {
   exports["default"] = {
     name: "ember-data",
-    initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
+    initialize: _emberDataInstanceInitializersInitializeStoreService["default"]
   };
 });
 define('website/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
@@ -402,7 +398,7 @@ define("website/templates/about", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "rbz2mfGw", "block": "{\"statements\":[[\"block\",[\"content-container\"],null,[[\"size\"],[80]],0]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"    \"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Who Am I\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\"Work\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"I am a software engineer at heart. After a couple of years working on personal projects that end in unmanagably mangled code, I began improving my engineering skills. I now focus on making a working product quickly, then considering ways to optimize and generalize. Redundant code terrifies me, and as such I avoid repeating work unnecessarily.\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"I focus on building modularized libraries. In the spirit of avoiding code duplication, I try to make my code as generic as possible. I also recognize that eventually I will learn more about my system, improve my programming skills, and refine the problem that I am attempting to solve. In recognition of these, modular code allows me to replace chunks of code while maintaining a working system. To me, consistent and meaningful APIs are a necessity to ever-changing codebases to allow for easy modularity, extensibility, and maintenance.\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\"Research\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"My focus on Machine Learning is driven by my desire to understand a human's ability to learn. Education is the most unifying factor for long-term equality, and a perfect understand on human learning means a perfect ability to educate the world's population. I believe that there are many latent factors influencing learning, and would love to focus on the study of Statistical Machine Learning to analyse and discover these latent factors.\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"I always have preferred the theoretical side of Machine Learning over the applications, but I know that one cannot exist without the other. Most of my research is focused on the theory behind Machine Learning algorithms, where my personal projects focus on their applications. I spend quite a lot of time pacing in front of my white board or reading research papers.\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\"Home\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"I sing. All the time. I'm sure my roommates love it, but I've always been afraid to ask. I enjoy making music, and use the guitar, piano, and ukelele as ways to relax when I'm stressed. I particularly enjoy playing jazz guitar, contemporary piano, and happy ukelele music (can the ukelele play anything other than happy music?).\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"I'm getting married quite soon. My partner and I love discussing statistics and psychology in-depth. We also enjoy playing card and board games, and I am forever attempting to teach her the joys of hard board games.\"],[\"close-element\"],[\"text\",\"\\n\\n\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "website/templates/about.hbs" } });
 });
 define("website/templates/application", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "tGNvr0DT", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"header-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"container\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"header\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"h1\",[]],[\"flush-element\"],[\"text\",\"Andrew\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"off\"],[\"flush-element\"],[\"text\",\"Patterson\"],[\"close-element\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"    \\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"menu\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"home\"],[[\"class\"],[\"menuitem\"]],4],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"text\",\"\\n                \"],[\"open-element\",\"form\",[]],[\"static-attr\",\"class\",\"download-form\"],[\"static-attr\",\"method\",\"get\"],[\"static-attr\",\"action\",\"cv.pdf\"],[\"flush-element\"],[\"text\",\"\\n                \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"menubutton clearbutton\"],[\"static-attr\",\"type\",\"submit\"],[\"flush-element\"],[\"text\",\"CV\"],[\"close-element\"],[\"text\",\"\\n                \"],[\"close-element\"],[\"text\",\"\\n            \"],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"projects\"],[[\"class\"],[\"menuitem\"]],3],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"datasets\"],[[\"class\"],[\"menuitem\"]],2],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"blog\"],[[\"class\"],[\"menuitem\"]],1],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"about\"],[[\"class\"],[\"menuitem\"]],0],[\"close-element\"],[\"text\",\"\\n        \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"About\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Blog\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Datasets\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Projects\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "website/templates/application.hbs" } });
+  exports["default"] = Ember.HTMLBars.template({ "id": "8ao/ayEk", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"header-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"container\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"header\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"h1\",[]],[\"flush-element\"],[\"text\",\"Andrew\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"off\"],[\"flush-element\"],[\"text\",\"Patterson\"],[\"close-element\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"menu\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"home\"],[[\"class\"],[\"menuitem\"]],2],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"text\",\"\\n                \"],[\"open-element\",\"form\",[]],[\"static-attr\",\"class\",\"download-form\"],[\"static-attr\",\"method\",\"get\"],[\"static-attr\",\"action\",\"cv.pdf\"],[\"flush-element\"],[\"text\",\"\\n                \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"menubutton clearbutton\"],[\"static-attr\",\"type\",\"submit\"],[\"flush-element\"],[\"text\",\"CV\"],[\"close-element\"],[\"text\",\"\\n                \"],[\"close-element\"],[\"text\",\"\\n            \"],[\"close-element\"],[\"text\",\"\\n            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"projects\"],[[\"class\"],[\"menuitem\"]],1],[\"close-element\"],[\"text\",\"\\n\"],[\"text\",\"            \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"about\"],[[\"class\"],[\"menuitem\"]],0],[\"close-element\"],[\"text\",\"\\n        \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"About\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Projects\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "website/templates/application.hbs" } });
 });
 define("website/templates/blog", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "gVknPqbp", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "website/templates/blog.hbs" } });
@@ -456,6 +452,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("website/app")["default"].create({"name":"website","version":"0.0.0+5341081d"});
+  require("website/app")["default"].create({"name":"website","version":"0.0.0+6b6cac7e"});
 }
 //# sourceMappingURL=website.map
