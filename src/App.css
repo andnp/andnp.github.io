@@ -1,0 +1,9 @@
+@import '~antd/dist/antd.css';
+@import '~github-markdown-css/github-markdown.css';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
