@@ -2,12 +2,14 @@
   "name": "andy-homepage",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://andnp.github.io",
   "dependencies": {
     "@types/highlight.js": "^9.12.3",
     "@types/jss": "^9.5.4",
     "@types/lodash": "^4.14.116",
     "@types/markdown-it": "0.0.5",
     "antd": "^3.8.1",
+    "gh-pages": "^1.2.0",
     "github-markdown-css": "^2.10.0",
     "highlight.js": "^9.12.0",
     "jss": "^9.8.7",
@@ -22,6 +24,8 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
