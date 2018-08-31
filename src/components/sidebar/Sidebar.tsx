@@ -13,6 +13,7 @@ const styles = buildStyles({
     'background': 'black',
     'flex': '1 1 0',
     'color': 'rgba(255, 255, 255, 0.65)',
+    'padding-top': '1em',
   },
   'menu-title': {
     'font-size': '1.25em',
@@ -53,7 +54,7 @@ interface SidebarDescription {
 
 const normalizeDefinition = (definition: SidebarDefinition, parent?: string): SidebarDescription => {
   const lowerKey = definition.key.toLowerCase();
-    
+
   const children = definition.children
     ? definition.children.map(child => normalizeDefinition(child, lowerKey))
     : undefined;
