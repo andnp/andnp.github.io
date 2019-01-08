@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Router, { RouteDefinition } from './components/Router';
 import AboutRoute from './components/routes/about/AboutRoute';
 import HomeRoute from './components/routes/home/HomeRoute';
+import PapersRoute from './components/routes/papers/PapersRoute';
 import ProjectsRoute from './components/routes/ProjectsRoute';
 import Sidebar, { SidebarDefinition } from './components/sidebar/Sidebar';
 import { onLargeScreen, onSmallScreen } from './components/utils/resizeWatcher';
@@ -12,6 +13,7 @@ interface AppDefinition extends RouteDefinition, SidebarDefinition {}
 
 const appDefinition: AppDefinition[] = [
   { key: 'Home', route: HomeRoute },
+  { key: 'Papers', route: PapersRoute },
   {
     key: 'Projects',
     route: ProjectsRoute,

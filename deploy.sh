@@ -1,4 +1,4 @@
-tmp=`git subtree split --prefix dist develop`
+tmp=`git subtree split --prefix build develop`
 echo ${tmp}
 git push origin $tmp:master --force
 
