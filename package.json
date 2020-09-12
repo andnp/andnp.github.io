@@ -21,7 +21,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "^10.4.0",
-    "react-scripts-ts": "4.0.1",
+    "react-scripts-ts": "^4.0.1",
     "simplytyped": "^3.3.0"
   },
   "scripts": {
@@ -38,5 +38,11 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "typescript": "^4.0.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
