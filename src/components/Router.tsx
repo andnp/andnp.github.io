@@ -4,11 +4,11 @@ export type RouteableComponent = React.ComponentClass<{path?: string}>;
 
 export interface RouteDefinition {
   key: string;
-  route: RouteableComponent;
+  route: () => Promise<RouteableComponent>;
 }
 
 interface RouteDescription {
-  [state: string]: RouteableComponent;
+  [state: string]: () => Promise<RouteableComponent>;
 }
 
 const normalizeRouteDescriptions = (defs: RouteDefinition[]): RouteDescription => {
@@ -19,7 +19,8 @@ const normalizeRouteDescriptions = (defs: RouteDefinition[]): RouteDescription =
 };
 
 interface RouterState {
-  routes: RouteDescription;
+  routes: Record<string, RouteableComponent>;
+  routeLoaders: RouteDescription;
   route: string;
   path: string;
 }
@@ -35,8 +36,11 @@ class Router extends React.Component<RouterProps, RouterState> {
     this.state = {
       path: '',
       route: 'home',
-      routes: normalizeRouteDescriptions(props.routes),
+      routeLoaders: normalizeRouteDescriptions(props.routes),
+      routes: {},
     };
+
+    this.loadRoute('home');
   }
 
   public componentDidMount() {
@@ -49,13 +53,36 @@ class Router extends React.Component<RouterProps, RouterState> {
   }
 
   public shouldComponentUpdate(nextProps: {}, nextState: RouterState) {
-    return this.state.route !== nextState.route || this.state.path !== nextState.path;
+    return this.state.route !== nextState.route || this.state.path !== nextState.path || this.state.routes !== nextState.routes;
+  }
+
+  public componentDidUpdate(nextProps: {}, nextState: RouterState) {
+    const route = this.state.route;
+    this.loadRoute(route);
   }
 
   public render() {
+    if (!this.state.routeLoaders[this.state.route]) throw new Error('Attempted to load undefined route' + this.state.route);
     const Route = this.state.routes[this.state.route];
-    if (!Route) throw new Error('Attempted to load undefined route' + this.state.route);
+
+    if (!Route) return <span />;
     return <Route path={this.state.path} />
+  }
+
+  private loadRoute(route: string) {
+    if (!this.state.routes[route]) {
+      const loader = this.state.routeLoaders[route];
+
+      loader().then(Route => {
+        const routes = {
+          ...this.state.routes,
+          [route]: Route,
+        };
+
+        this.setState({ routes })
+        console.log(this.state)
+      });
+    }
   }
 
   private onHashChange = (e: HashChangeEvent) => {
@@ -71,8 +98,8 @@ class Router extends React.Component<RouterProps, RouterState> {
     const path = paths.join('/');
 
     // if hash is not a known route, set hash back to last known route
-    if (!(hash in this.state.routes)) {
-      window.location.hash = this.state.route;
+    if (!(hash in this.state.routeLoaders)) {
+      window.location.hash = "/" + this.state.route;
       return;
     }
 

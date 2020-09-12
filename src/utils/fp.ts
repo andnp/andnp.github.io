@@ -15,3 +15,16 @@ export const tapEffect = <F extends AnyFunc>(f: F, effect: () => any): F => {
 };
 
 export const invoke = <F extends AnyFunc>(f: F): ReturnType<F> => f();
+
+export const once = <T>(f: () => T) => {
+    let hit = false;
+    let ret: T;
+    return () => {
+        if (!hit) {
+            ret = f();
+            hit = true;
+        }
+
+        return ret;
+    }
+};

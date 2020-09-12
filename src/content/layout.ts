@@ -1,11 +1,12 @@
 import { RouteDefinition } from '../components/Router';
 import { SidebarDefinition } from '../components/sidebar/Sidebar';
+import { once, prop } from '../utils/fp';
 
 
-import AboutRoute from '../components/routes/about/AboutRoute';
-import HomeRoute from '../components/routes/home/HomeRoute';
-import PapersRoute from '../components/routes/papers/PapersRoute';
-import ProjectsRoute from '../components/routes/ProjectsRoute';
+const HomeRoute = once(() => import('../components/routes/home/HomeRoute').then(prop('default')));
+const AboutRoute = once(() => import('../components/routes/about/AboutRoute').then(prop('default')));
+const PapersRoute = once(() => import('../components/routes/papers/PapersRoute').then(prop('default')));
+const ProjectsRoute = once(() => import('../components/routes/ProjectsRoute').then(prop('default')));
 
 interface AppDefinition extends RouteDefinition, SidebarDefinition {}
 
