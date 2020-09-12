@@ -17,7 +17,7 @@ class App extends React.Component<{}, AppState> {
     this.state = { orientation: 'row' };
   }
 
-  public componentWillMount() {
+  public componentDidMount() {
     onSmallScreen(() => this.setState({ orientation: 'column' }));
     onLargeScreen(() => this.setState({ orientation: 'row' }));
   }

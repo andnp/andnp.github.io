@@ -29,7 +29,7 @@ export abstract class ResizeWatcher<P = {}, S = {}> extends React.Component<P, S
   protected abstract onSmallScreen?: ResizeHandler;
   protected abstract onLargeScreen?: ResizeHandler;
 
-  public componentWillMount() {
+  public componentDidMount() {
     if (this.onSmallScreen) onSmallScreen(this.onSmallScreen);
     if (this.onLargeScreen) onLargeScreen(this.onLargeScreen);
   }

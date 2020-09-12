@@ -81,7 +81,7 @@ const markdown = `
   ${bibMarkdown.join('\n\n')}
 `;
 
-class AboutRoute extends React.Component {
+class PapersRoute extends React.Component {
   public render() {
     return (
       <div style={{ maxWidth: '800px' }}>
@@ -91,4 +91,4 @@ class AboutRoute extends React.Component {
   }
 }
 
-export default AboutRoute;
+export default PapersRoute;

@@ -4,11 +4,12 @@ import Markdown from '../utils/Markdown';
 
 interface ProjectsRouteProps {
   path: string;
+  user?: string;
 }
 
 class ProjectsRoute extends React.Component<ProjectsRouteProps> {
   public shouldComponentUpdate(nextProps: ProjectsRouteProps) {
-    return this.props.path !== nextProps.path;
+    return this.props.path !== nextProps.path || this.props.user !== nextProps.user;
   }
 
   public render() {

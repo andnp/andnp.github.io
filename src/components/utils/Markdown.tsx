@@ -1,6 +1,6 @@
 import * as hljs from 'highlight.js';
 import * as markdownIt from 'markdown-it';
-import * as katex from 'markdown-it-katex';
+import katex from 'markdown-it-katex';
 import * as React from 'react';
 import { invokeProp } from '../../utils/fp';
 
@@ -46,7 +46,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
     }
   }
 
-  public componentWillReceiveProps(nextProps: MarkdownProps) {
+  public componentDidUpdate(nextProps: MarkdownProps) {
     if ('raw' in nextProps) {
       this.setState({ md: render(nextProps.raw) });
     } else if ('remote' in nextProps) {

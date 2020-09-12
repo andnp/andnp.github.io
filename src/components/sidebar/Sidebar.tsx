@@ -1,4 +1,5 @@
 import Menu from 'antd/lib/menu';
+import { MenuInfo } from 'rc-menu/lib/interface';
 import * as React from 'react';
 import injectSheet from 'react-jss';
 import { buildStyles, styledComponent } from '../../utils/jss';
@@ -6,7 +7,6 @@ import { HorizontalRule } from '../utils/HorizontalRule';
 import { onLargeScreen, onSmallScreen } from '../utils/resizeWatcher';
 import ContactInfo from './Contact';
 import SocialMedia from './SocialMedia';
-
 
 const styles = buildStyles({
   'sidebar-wrapper': {
@@ -79,7 +79,7 @@ class Sidebar extends styledComponent(styles) {
 
   private sidebarDescription = this.props.routes.map(def => normalizeDefinition(def));
 
-  public componentWillMount() {
+  public componentDidMount() {
     onSmallScreen(() => this.setState({ mode: 'horizontal', smallScreen: true }));
     onLargeScreen(() => this.setState({ mode: 'inline', smallScreen: false }));
   }
@@ -113,7 +113,7 @@ class Sidebar extends styledComponent(styles) {
     );
   }
 
-  private onClick = ({ key }: { key: string }) => {
+  private onClick = ({ key }: MenuInfo) => {
     window.location.hash = '/' + key;
   }
 

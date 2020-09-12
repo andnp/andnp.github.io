@@ -1,6 +1,6 @@
 import * as React from 'react';
+import about from '../../../content/routes/about.md';
 import Markdown from '../../utils/Markdown';
-import about from './about.md';
 
 class AboutRoute extends React.Component {
   public render() {
