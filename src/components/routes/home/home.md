@@ -1,6 +1,5 @@
 ## Research
 
-
 ### Machine Learning
 My current research focus is in Reinforcement Learning and Representation Learning. I am specifically interested in the integration of these two fields. Modern machine learning research has been dominated by deep learning, but the mentality of increasing the number of parameters to improve performance is not going to continue being computationally tractable. It is important to find more meaningful representations to allow use of lower free-parameter models to preserve computational tractability.
 

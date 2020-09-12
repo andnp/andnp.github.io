@@ -1,5 +1,6 @@
 import * as hljs from 'highlight.js';
 import * as markdownIt from 'markdown-it';
+import * as katex from 'markdown-it-katex';
 import * as React from 'react';
 import { invokeProp } from '../../utils/fp';
 
@@ -14,6 +15,14 @@ const md = markdownIt({
   },
 });
 
+md.use(katex);
+
+const render = (data: string) => {
+  const markdown = md.render(data);
+
+  return markdown;
+}
+
 type MarkdownProps = {
   raw: string;
 } | {
@@ -22,6 +31,7 @@ type MarkdownProps = {
 
 interface MarkdownState {
   md: string;
+  position?: number;
 }
 
 class Markdown extends React.Component<MarkdownProps, MarkdownState> {
@@ -30,7 +40,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
     this.state = { md: '' };
 
     if ('raw' in props) {
-      this.state = { md: md.render(props.raw) };
+      this.state = { md: render(props.raw) };
     } else if ('remote' in props) {
       this.fetchRemote(props.remote);
     }
@@ -38,7 +48,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
 
   public componentWillReceiveProps(nextProps: MarkdownProps) {
     if ('raw' in nextProps) {
-      this.setState({ md: md.render(nextProps.raw) });
+      this.setState({ md: render(nextProps.raw) });
     } else if ('remote' in nextProps) {
       this.fetchRemote(nextProps.remote);
     }
@@ -47,7 +57,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   public render() {
     const markdown = this.state.md;
     return (
-      <div className='markdown-body'>
+      <div className='markdown-body' style={{ width: '100%' }}>
         <span dangerouslySetInnerHTML={{ __html: markdown }} />
       </div>
     );
@@ -56,7 +66,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   private fetchRemote(remote: string) {
     fetch(remote)
       .then(invokeProp('text'))
-      .then(md.render.bind(md))
+      .then(render)
       .then(md => this.setState({ md }));
   }
 }

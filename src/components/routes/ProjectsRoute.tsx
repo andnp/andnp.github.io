@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { projectReadme, projectReadmeUrl } from '../../services/github';
+import { projectReadmeUrl } from '../../services/github';
 import Markdown from '../utils/Markdown';
 
 interface ProjectsRouteProps {

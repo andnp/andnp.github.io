@@ -6,3 +6,5 @@ declare module '*.md' {
   const str: string;
   export default str;
 }
+
+declare module 'markdown-it-katex' {}

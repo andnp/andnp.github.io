@@ -1,30 +1,11 @@
 import * as React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Router, { RouteDefinition } from './components/Router';
-import AboutRoute from './components/routes/about/AboutRoute';
-import HomeRoute from './components/routes/home/HomeRoute';
-import PapersRoute from './components/routes/papers/PapersRoute';
-import ProjectsRoute from './components/routes/ProjectsRoute';
-import Sidebar, { SidebarDefinition } from './components/sidebar/Sidebar';
+import Router from './components/Router';
+
+import Sidebar from './components/sidebar/Sidebar';
 import { onLargeScreen, onSmallScreen } from './components/utils/resizeWatcher';
-
-interface AppDefinition extends RouteDefinition, SidebarDefinition {}
-
-const appDefinition: AppDefinition[] = [
-  { key: 'Home', route: HomeRoute },
-  { key: 'Papers', route: PapersRoute },
-  {
-    key: 'Projects',
-    route: ProjectsRoute,
-    children: [
-      { key: 'validtyped' },
-      { key: 'simplytyped' },
-      { key: 'maybetyped' },
-    ]
-  },
-  { key: 'About', route: AboutRoute },
-];
+import { appDefinition } from './content/layout';
 
 interface AppState {
   orientation: 'row' | 'column';
@@ -51,9 +32,9 @@ class App extends React.Component<{}, AppState> {
       : 'auto';
 
     return (
-      <div className="App">
+      <div className="App" style={{ height }}>
         <Header />
-        <div style={{ display: 'flex', height, flexDirection: this.state.orientation }}>
+        <div style={{ display: 'flex', flex: 1, overflowY: 'auto', flexDirection: this.state.orientation }}>
           <Sidebar routes={appDefinition} />
           <div style={{overflowY, flex: '5 1 0', paddingRight: '2em', paddingTop: '1em', paddingLeft: '2em' }}>
             <Router routes={appDefinition} />

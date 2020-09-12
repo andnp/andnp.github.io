@@ -26,6 +26,7 @@ class HomeRoute extends ResizeWatcher<{}, { isPersonalSectionStacked: boolean }>
   private getPersonalSection() {
     const AboutElement = <Markdown remote={aboutMd}/>;
     const PortraitElement = <img style={{ width: '290px', height: '386px' }} src={portrait} />;
+
     if (this.state.isPersonalSectionStacked) {
       return (
         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '4em' }}>
