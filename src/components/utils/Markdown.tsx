@@ -38,12 +38,21 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   constructor(props: MarkdownProps) {
     super(props);
     this.state = { md: '' };
+  }
 
-    if ('raw' in props) {
-      this.state = { md: render(props.raw) };
-    } else if ('remote' in props) {
-      this.fetchRemote(props.remote);
+  public componentDidMount() {
+    if ('raw' in this.props) {
+      this.setState({ md: render(this.props.raw) });
+    } else if ('remote' in this.props) {
+      this.fetchRemote(this.props.remote);
     }
+  }
+
+  public shouldComponentUpdate(nextProps: MarkdownProps, nextState: MarkdownState) {
+    const changedRemote = ('remote' in nextProps) && ('remote' in this.props) && (this.props.remote !== nextProps.remote);
+    const changedRaw = ('raw' in nextProps) && ('raw' in this.props) && (this.props.raw !== nextProps.raw);
+    const changedState = this.state.md !== nextState.md;
+    return changedRemote || changedRaw || changedState;
   }
 
   public componentDidUpdate(nextProps: MarkdownProps) {

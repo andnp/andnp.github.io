@@ -53,10 +53,14 @@ class Router extends React.Component<RouterProps, RouterState> {
   }
 
   public shouldComponentUpdate(nextProps: {}, nextState: RouterState) {
-    return this.state.route !== nextState.route || this.state.path !== nextState.path || this.state.routes !== nextState.routes;
+    const route = nextState.route;
+    const changedRoute = this.state.route !== nextState.route;
+    const changedPath = this.state.path !== nextState.path;
+    const addedCachedRoute = this.state.routes[route] !== nextState.routes[route];
+    return changedRoute || changedPath || addedCachedRoute;
   }
 
-  public componentDidUpdate(nextProps: {}, nextState: RouterState) {
+  public componentDidUpdate(oldProps: {}, oldState: RouterState) {
     const route = this.state.route;
     this.loadRoute(route);
   }
@@ -79,6 +83,7 @@ class Router extends React.Component<RouterProps, RouterState> {
           [route]: Route,
         };
 
+        console.log(this.state)
         this.setState({ routes })
       });
     }
