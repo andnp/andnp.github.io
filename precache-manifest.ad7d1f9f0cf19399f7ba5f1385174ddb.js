@@ -100,6 +100,10 @@ self.__precacheManifest = [
     "url": "/static/media/KaTeX_Fraktur-Regular.dc4e330b.woff"
   },
   {
+    "revision": "82d05fe2abb0da9d1077110efada0f6e",
+    "url": "/static/media/KaTeX_Fraktur-Regular.82d05fe2.ttf"
+  },
+  {
     "revision": "78b0124fc13059862cfbe4c95ff68583",
     "url": "/static/media/KaTeX_Main-Bold.78b0124f.woff2"
   },
@@ -110,10 +114,6 @@ self.__precacheManifest = [
   {
     "revision": "2e1915b1a2f33c8ca9d1534193e934d7",
     "url": "/static/media/KaTeX_Main-Bold.2e1915b1.ttf"
-  },
-  {
-    "revision": "82d05fe2abb0da9d1077110efada0f6e",
-    "url": "/static/media/KaTeX_Fraktur-Regular.82d05fe2.ttf"
   },
   {
     "revision": "c7213ceb79250c2ca46cc34ff3b1aa49",
@@ -204,6 +204,10 @@ self.__precacheManifest = [
     "url": "/static/media/KaTeX_SansSerif-Regular.badf3598.woff2"
   },
   {
+    "revision": "6c3bd5b57f7eba215a2d37e2e28077f1",
+    "url": "/static/media/KaTeX_SansSerif-Regular.6c3bd5b5.woff"
+  },
+  {
     "revision": "d511ebcef253ab53775576f28315f350",
     "url": "/static/media/KaTeX_SansSerif-Regular.d511ebce.ttf"
   },
@@ -222,10 +226,6 @@ self.__precacheManifest = [
   {
     "revision": "10ec8be67344c83bb4bbec989de57d8a",
     "url": "/static/media/KaTeX_Size1-Regular.10ec8be6.woff2"
-  },
-  {
-    "revision": "6c3bd5b57f7eba215a2d37e2e28077f1",
-    "url": "/static/media/KaTeX_SansSerif-Regular.6c3bd5b5.woff"
   },
   {
     "revision": "35b99771d8ac5a9f102389dc1934dac2",
