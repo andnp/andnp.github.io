@@ -27,5 +27,4 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deployment Action
     - run: npm run deploy
