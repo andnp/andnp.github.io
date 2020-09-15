@@ -35,6 +35,8 @@ interface MarkdownState {
 }
 
 class Markdown extends React.Component<MarkdownProps, MarkdownState> {
+  private disposed = false;
+
   constructor(props: MarkdownProps) {
     super(props);
     this.state = { md: '' };
@@ -64,6 +66,10 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
     }
   }
 
+  public componentWillUnmount() {
+    this.disposed = true;
+  }
+
   public render() {
     const markdown = this.state.md;
     return (
@@ -76,7 +82,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   private fetchRemote(remote: string) {
     cachedFetch(remote)
       .then(render)
-      .then(md => this.setState({ md }));
+      .then(md => !this.disposed && this.setState({ md }));
   }
 }
 
