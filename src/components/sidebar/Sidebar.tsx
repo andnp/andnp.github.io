@@ -70,14 +70,25 @@ const normalizeDefinition = (definition: SidebarDefinition, parent?: string): Si
   }
 }
 
+interface SidebarProps {
+  routes: SidebarDefinition[];
+}
+
 class Sidebar extends styledComponent(styles) {
   public state = {
     mode: 'inline' as 'inline' | 'horizontal',
     smallScreen: false,
   };
-  public props: { routes: SidebarDefinition[] } = { routes: [] };
+
+  public props: SidebarProps;
 
   private sidebarDescription = this.props.routes.map(def => normalizeDefinition(def));
+
+  constructor(props: SidebarProps) {
+    super(props);
+
+    this.props = props;
+  }
 
   public componentDidMount() {
     onSmallScreen(() => this.setState({ mode: 'horizontal', smallScreen: true }));
