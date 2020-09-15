@@ -8,6 +8,6 @@ declare module '*.md' {
 }
 
 declare module 'markdown-it-katex' {
-  declare const katex: any;
+  const katex: any;
   export default katex;
 }

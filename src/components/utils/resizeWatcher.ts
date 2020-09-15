@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-type ResizeHandler = (width?: number) => void;
+type ResizeHandler = ((width: number) => void) | (() => void);
 
 const callbacks: ResizeHandler[] = [];
 
@@ -18,11 +18,11 @@ export const deleteResizeHandler = (f: ResizeHandler) => {
 }
 
 export const onSmallScreen = (f: ResizeHandler) => addResizeHandler((width) => {
-  if (width < 500) f();
+  if (width < 500) f(width);
 });
 
 export const onLargeScreen = (f: ResizeHandler) => addResizeHandler((width) => {
-  if (width >= 500) f();
+  if (width >= 500) f(width);
 });
 
 export abstract class ResizeWatcher<P = {}, S = {}> extends React.Component<P, S> {

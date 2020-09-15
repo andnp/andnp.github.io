@@ -3,7 +3,7 @@ import { projectReadmeUrl } from '../../services/github';
 import Markdown from '../utils/Markdown';
 
 interface ProjectsRouteProps {
-  path: string;
+  path?: string;
   user?: string;
 }
 
@@ -13,6 +13,11 @@ class ProjectsRoute extends React.Component<ProjectsRouteProps> {
   }
 
   public render() {
+    // if we don't have a path, then just give up
+    if (!this.props.path) {
+      return (<span />);
+    }
+
     const githubUrl = projectReadmeUrl('andnp', this.props.path);
 
     return (

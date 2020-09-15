@@ -75,7 +75,7 @@ class Sidebar extends styledComponent(styles) {
     mode: 'inline' as 'inline' | 'horizontal',
     smallScreen: false,
   };
-  public props: { routes: SidebarDefinition[] };
+  public props: { routes: SidebarDefinition[] } = { routes: [] };
 
   private sidebarDescription = this.props.routes.map(def => normalizeDefinition(def));
 
