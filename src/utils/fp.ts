@@ -1,5 +1,7 @@
 import { AnyFunc } from 'simplytyped';
 
+export const identity = <T>(x: T) => x;
+
 export const prop = <K extends string>(key: K) =>
     <T extends Record<K, any>>(obj: T) => obj[key];
 

@@ -83,8 +83,7 @@ class Router extends React.Component<RouterProps, RouterState> {
           [route]: Route,
         };
 
-        console.log(this.state)
-        this.setState({ routes })
+        this.setState({ routes });
       });
     }
   }

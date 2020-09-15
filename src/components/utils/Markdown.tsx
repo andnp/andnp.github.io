@@ -2,7 +2,7 @@ import * as hljs from 'highlight.js';
 import * as markdownIt from 'markdown-it';
 import katex from 'markdown-it-katex';
 import * as React from 'react';
-import { invokeProp } from '../../utils/fp';
+import { cachedFetch } from '../../utils/cache';
 
 const md = markdownIt({
   highlight: (str, lang) => {
@@ -52,14 +52,15 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
     const changedRemote = ('remote' in nextProps) && ('remote' in this.props) && (this.props.remote !== nextProps.remote);
     const changedRaw = ('raw' in nextProps) && ('raw' in this.props) && (this.props.raw !== nextProps.raw);
     const changedState = this.state.md !== nextState.md;
+
     return changedRemote || changedRaw || changedState;
   }
 
-  public componentDidUpdate(nextProps: MarkdownProps) {
-    if ('raw' in nextProps) {
-      this.setState({ md: render(nextProps.raw) });
-    } else if ('remote' in nextProps) {
-      this.fetchRemote(nextProps.remote);
+  public componentDidUpdate(lastProps: MarkdownProps) {
+    if ('raw' in this.props) {
+      this.setState({ md: render(this.props.raw) });
+    } else if ('remote' in this.props) {
+      this.fetchRemote(this.props.remote);
     }
   }
 
@@ -73,8 +74,7 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   }
 
   private fetchRemote(remote: string) {
-    fetch(remote)
-      .then(invokeProp('text'))
+    cachedFetch(remote)
       .then(render)
       .then(md => this.setState({ md }));
   }

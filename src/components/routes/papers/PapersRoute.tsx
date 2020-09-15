@@ -1,6 +1,5 @@
 import { parseBibFile, } from 'bibtex';
 import * as React from 'react';
-import { user } from 'scholarly';
 import Markdown from '../../utils/Markdown';
 
 const bibFile = parseBibFile(`
@@ -46,9 +45,6 @@ const bibFile = parseBibFile(`
   publisher={PsyArXiv}
 }
 `);
-
-user('jd2nCqYAAAAJ').then(console.log)
-
 
 const bibMarkdown = bibFile.entries_raw.map(entry => {
   const titleRaw = entry.getFieldAsString('TITLE');
