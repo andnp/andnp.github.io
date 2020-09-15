@@ -29,14 +29,15 @@
   },
   "devDependencies": {
     "@types/highlight.js": "9.12.4",
-    "@types/jss": "9.5.8",
     "@types/jest": "26.0.13",
+    "@types/jss": "9.5.8",
     "@types/lodash": "4.14.161",
     "@types/markdown-it": "10.0.2",
     "@types/node": "14.10.1",
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
     "gh-pages": "3.1.0",
+    "scholarly": "^1.1.0",
     "typescript": "4.0.2"
   },
   "browserslist": [
