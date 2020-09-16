@@ -3,6 +3,11 @@ import { user } from 'scholarly';
 
 import { publicationData } from '../src/content/publications';
 
+const cleanAuthor = (author: string) => {
+  if (author[0] === ' ') author = author.substr(1);
+  return author;
+};
+
 async function run() {
   const data = await user('jd2nCqYAAAAJ');
 
@@ -13,7 +18,7 @@ async function run() {
 
     return {
       title: article.title,
-      authors: article.authors,
+      authors: article.authors.map(cleanAuthor),
       journal: article.journal || 'arxiv',
       year: article.year,
       url: article.url || '',

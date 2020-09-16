@@ -14,16 +14,30 @@ const joinElements = (elements: JSX.Element[], joiner: JSX.Element | string) => 
   }
 
   return out;
-}
+};
+
+// well this just sounds conceited
+const highlightMe = (authors: string[]): JSX.Element[] => {
+  return authors.map((author, i) => {
+    let element = <>{author}</>;
+    if (author.startsWith('A Patterson')) {
+      element = <strong key={i}>{author}</strong>
+    }
+
+    if (i !== authors.length - 1) {
+      element = <>{element}, </>
+    }
+    return element;
+  });
+};
 
 const bibElements = publicationData.map(entry => {
-  const authorList = entry.authors.map(author => {
+  const authors = entry.authors.map(author => {
     if (author.startsWith(' ')) author = author.substr(1);
     // if (author === 'A Patterson') author = `*${author}*`;
     if (author === '...') author = 'et al.';
     return author;
   });
-  const authors = authorList.join(', ');
 
   const bottomLine: JSX.Element[] = [];
   if (entry.code) {
@@ -37,7 +51,7 @@ const bibElements = publicationData.map(entry => {
   return (
     <>
       <strong>{entry.title}</strong><br/>
-      {authors}<br/>
+      {highlightMe(authors)}<br/>
       <em>{entry.journal}</em>, {entry.year}<br/>
       {joinElements(bottomLine, ' | ')}
     </>
