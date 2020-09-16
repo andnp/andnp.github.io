@@ -51,7 +51,7 @@ export const publicationData = [
       "D Hancock",
       "B Caron",
       "Y Qian",
-      "F Pestilli",
+      "F Pestilli"
     ],
     "journal": "Scientific data",
     "year": 2019,
@@ -107,7 +107,7 @@ export const publicationData = [
     "journal": "arxiv",
     "year": 2018,
     "url": "https://openreview.net/pdf?id=ryZElGZ0Z",
-    "private": true,
+    "private": true
   },
   {
     "title": "Organizing experience: a deeper look at replay mechanisms for sample-based planning in continuous state domains",
@@ -121,5 +121,5 @@ export const publicationData = [
     "journal": "International Joint Conference on Artificial Intelligence",
     "year": 2018,
     "url": "https://arxiv.org/pdf/1806.04624.pdf"
-  },
+  }
 ];
