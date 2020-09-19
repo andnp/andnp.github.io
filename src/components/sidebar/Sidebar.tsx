@@ -43,6 +43,7 @@ const menuStyles = {
 
 export interface SidebarDefinition {
   key: string;
+  args?: Record<string, unknown>;
   children?: SidebarDefinition[];
 }
 

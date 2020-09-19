@@ -17,6 +17,7 @@ export const appDefinition: AppDefinition[] = [
     key: 'Projects',
     route: ProjectsRoute,
     children: [
+      { key: 'Regularized-GradientTD', args: { owner: 'rlai-lab' }},
       { key: 'validtyped' },
       { key: 'simplytyped' },
       { key: 'maybetyped' },

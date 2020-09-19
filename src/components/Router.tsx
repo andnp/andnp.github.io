@@ -1,9 +1,12 @@
 import * as React from 'react';
+import { SidebarDefinition } from './sidebar/Sidebar';
 
-export type RouteableComponent = React.ComponentClass<{path?: string}>;
+export type RouteableComponent = React.ComponentClass<{path?: string, args?: Record<string, any>}>;
 
 export interface RouteDefinition {
   key: string;
+  args?: Record<string, unknown>;
+  children?: SidebarDefinition[];
   route: () => Promise<RouteableComponent>;
 }
 
@@ -23,6 +26,7 @@ interface RouterState {
   routeLoaders: RouteDescription;
   route: string;
   path: string;
+  args?: Record<string, unknown>;
 }
 
 interface RouterProps {
@@ -70,7 +74,7 @@ class Router extends React.Component<RouterProps, RouterState> {
     const Route = this.state.routes[this.state.route];
 
     if (!Route) return <span />;
-    return <Route path={this.state.path} />
+    return <Route path={this.state.path} args={this.state.args} />
   }
 
   private loadRoute(route: string) {
@@ -106,9 +110,14 @@ class Router extends React.Component<RouterProps, RouterState> {
       return;
     }
 
+    const routeDef = this.props.routes.filter(route => route.key.toLowerCase() === hash);
+    const child = routeDef && routeDef[0]?.children?.filter(child => child.key.toLowerCase() === path);
+    const args = child && child[0]?.args;
+
     this.setState({
       ...this.state,
       path,
+      args,
       route: hash,
     });
   }

@@ -97,6 +97,19 @@ export const publicationData = [
     "url": "https://arxiv.org/pdf/1807.06763.pdf"
   },
   {
+    "title": "Discovery of Predictive Representations With a Network of General Value Functions",
+    "authors": [
+      "M Schlegel",
+      "A Patterson",
+      "A White",
+      "M White"
+    ],
+    "journal": "arxiv",
+    "year": 2018,
+    "url": "https://openreview.net/pdf?id=ryZElGZ0Z",
+    "private": true
+  },
+  {
     "title": "Organizing experience: a deeper look at replay mechanisms for sample-based planning in continuous state domains",
     "authors": [
       "Y Pan",

@@ -31,32 +31,37 @@ const highlightMe = (authors: string[]): JSX.Element[] => {
   });
 };
 
-const bibElements = publicationData.map(entry => {
-  const authors = entry.authors.map(author => {
-    if (author.startsWith(' ')) author = author.substr(1);
-    // if (author === 'A Patterson') author = `*${author}*`;
-    if (author === '...') author = 'et al.';
-    return author;
-  });
+const bibElements =
+  publicationData
+    .map(entry => {
+      if (entry.private) return;
 
-  const bottomLine: JSX.Element[] = [];
-  if (entry.code) {
-    bottomLine.push(<a href={entry.code}>code</a>);
-  }
+      const authors = entry.authors.map(author => {
+        if (author.startsWith(' ')) author = author.substr(1);
+        // if (author === 'A Patterson') author = `*${author}*`;
+        if (author === '...') author = 'et al.';
+        return author;
+      });
 
-  if (entry.url) {
-    bottomLine.push(<a href={entry.url}>paper</a>)
-  }
+      const bottomLine: JSX.Element[] = [];
+      if (entry.code) {
+        bottomLine.push(<a href={entry.code}>code</a>);
+      }
 
-  return (
-    <>
-      <strong>{entry.title}</strong><br/>
-      {highlightMe(authors)}<br/>
-      <em>{entry.journal}</em>, {entry.year}<br/>
-      {joinElements(bottomLine, ' | ')}
-    </>
-  );
-});
+      if (entry.url) {
+        bottomLine.push(<a href={entry.url}>paper</a>)
+      }
+
+      return (
+        <>
+          <strong>{entry.title}</strong><br/>
+          {highlightMe(authors)}<br/>
+          <em>{entry.journal}</em>, {entry.year}<br/>
+          {joinElements(bottomLine, ' | ')}
+        </>
+      );
+    })
+    .filter(element => element !== undefined);
 
 class PapersRoute extends React.Component {
   public render() {
