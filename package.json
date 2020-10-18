@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://andnp.github.io",
   "dependencies": {
-    "antd": "4.6.5",
+    "antd": "4.6.6",
     "bibtex": "0.9.0",
     "github-markdown-css": "4.0.0",
     "highlight.js": "10.2.0",
