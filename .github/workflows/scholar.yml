@@ -18,12 +18,4 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install
-    - run: sh scripts/commit_scholar.sh
-    - name: pull-request-action
-      if: ! git diff-index --quiet HEAD --
-      uses: vsoch/pull-request-action@1.0.6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PULL_REQUEST_BRANCH: "develop"
-        PULL_REQUEST_TITLE	: "Add new paper!"
-        PULL_REQUEST_REVIEWERS: "andnp"
+    - run: sh scripts/commit_scholar.sh ${{ secrets.GITHUB_TOKEN }}
