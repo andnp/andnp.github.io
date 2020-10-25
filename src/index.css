@@ -1,10 +1,31 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
   font-size: 1.1em;
+  line-height: 1.6;
 }
 
 #root {
   height: 100%;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+
+.katex .accent {
+  font-style: italic;
+}
+
+.katex .mathdefault {
+  font-style: italic;
+}
+
+.katex .mopen {
+  font-style: italic;
+}
+
+.katex .mclose {
+  font-style: italic;
 }

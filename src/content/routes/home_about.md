@@ -3,7 +3,7 @@
 
 **Role:** Ph.D. Student
 
-**Advisor:** Dr. Martha White
+**Advisor:** [Dr. Martha White](https://marthawhite.ca)
 
 **Teaching:** [CMPUT 466/551](https://marthawhite.github.io/mlcourse/)
 
