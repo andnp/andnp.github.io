@@ -1,27 +1,42 @@
+import katex from '@neilsustc/markdown-it-katex';
 import * as hljs from 'highlight.js';
 import * as markdownIt from 'markdown-it';
-import katex from 'markdown-it-katex';
 import * as React from 'react';
+import { macros } from '../../content/katex-macros';
 import { cachedFetch } from '../../utils/cache';
 
-const md = markdownIt({
+// -----------------------
+// Build markdown compiler
+// -----------------------
+
+const katexOptions = {
+  throwOnError: false,
+  macros,
+};
+
+const md: markdownIt = markdownIt({
   highlight: (str, lang) => {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return hljs.highlight(lang, str).value;
-      } catch (e) { /* stub */ }
+        return `<div>${hljs.highlight(lang, str, true).value}</div>`;
+      }
+      catch (error) { /* do nothing */ }
     }
-    return '';
+    return `<code><div>${md.utils.escapeHtml(str)}</div></code>`;
   },
-});
-
-md.use(katex);
+})
+  .use(katex, katexOptions)
+  .set({ linkify: true });
 
 const render = (data: string) => {
   const markdown = md.render(data);
 
   return markdown;
 }
+
+// ------------------------
+// Build markdown component
+// ------------------------
 
 type MarkdownProps = {
   raw: string;

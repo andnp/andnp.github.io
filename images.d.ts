@@ -7,7 +7,7 @@ declare module '*.md' {
   export default str;
 }
 
-declare module 'markdown-it-katex' {
+declare module '@neilsustc/markdown-it-katex' {
   const katex: any;
   export default katex;
 }
