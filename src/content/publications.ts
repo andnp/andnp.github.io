@@ -121,5 +121,17 @@ export const publicationData = [
     "journal": "International Joint Conference on Artificial Intelligence",
     "year": 2018,
     "url": "https://arxiv.org/pdf/1806.04624.pdf"
+  },
+  {
+    "title": "Investigating Objectives for Off-policy Value Estimation in Reinforcement Learning",
+    "authors": [
+      "A Patterson",
+      "S Ghiassian",
+      "A White",
+      "M White"
+    ],
+    "journal": "arxiv",
+    "year": 2020,
+    "url": ""
   }
 ];
