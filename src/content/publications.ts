@@ -1,4 +1,16 @@
 export const publicationData = [
+    {
+    "title": "Investigating Objectives for Off-policy Value Estimation in Reinforcement Learning",
+    "authors": [
+      "A Patterson",
+      "S Ghiassian",
+      "A White",
+      "M White"
+    ],
+    "journal": "Work In Progress",
+    "year": 2020,
+    "url": "https://webdocs.cs.ualberta.ca/~whitem/publications/ove-journal-2020.pdf"
+  },
   {
     "title": "Gradient Temporal-Difference Learning with Regularized Corrections",
     "authors": [
