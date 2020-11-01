@@ -1,5 +1,5 @@
 export const publicationData = [
-    {
+  {
     "title": "Investigating Objectives for Off-policy Value Estimation in Reinforcement Learning",
     "authors": [
       "A Patterson",
