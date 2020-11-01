@@ -5,7 +5,7 @@
   "homepage": "https://andnp.github.io",
   "dependencies": {
     "@neilsustc/markdown-it-katex": "^0.5.0",
-    "antd": "4.6.6",
+    "antd": "4.7.0",
     "bibtex": "0.9.0",
     "github-markdown-css": "4.0.0",
     "highlight.js": "10.2.1",
