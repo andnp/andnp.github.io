@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://andnp.github.io",
   "dependencies": {
-    "@neilsustc/markdown-it-katex": "^0.5.0",
+    "@neilsustc/markdown-it-katex": "^0.6.1",
     "antd": "4.7.3",
     "bibtex": "0.9.0",
     "github-markdown-css": "4.0.0",
