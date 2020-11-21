@@ -7,12 +7,14 @@ const HomeRoute = once(() => import('../components/routes/home/HomeRoute').then(
 const AboutRoute = once(() => import('../components/routes/about/AboutRoute').then(prop('default')));
 const PapersRoute = once(() => import('../components/routes/papers/PapersRoute').then(prop('default')));
 const ProjectsRoute = once(() => import('../components/routes/ProjectsRoute').then(prop('default')));
+const BlogsRoute = once(() => import('../components/routes/BlogsRoute').then(prop('default')));
 
 interface AppDefinition extends RouteDefinition, SidebarDefinition {}
 
 export const appDefinition: AppDefinition[] = [
   { key: 'Home', route: HomeRoute },
   { key: 'Papers', route: PapersRoute },
+  { key: 'Blogs', route: BlogsRoute },
   {
     key: 'Projects',
     route: ProjectsRoute,

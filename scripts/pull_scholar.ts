@@ -26,7 +26,7 @@ async function run() {
   });
   raw = raw.filter(data => data !== undefined);
 
-  const pubData = [...publicationData, ...raw];
+  const pubData = [...raw, ...publicationData];
   const pubDataStr = JSON.stringify(pubData, null, 2);
 
   const outStr = `export const publicationData = ${pubDataStr};\n`;

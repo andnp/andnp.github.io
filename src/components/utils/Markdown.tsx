@@ -88,9 +88,9 @@ class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   public render() {
     const markdown = this.state.md;
     return (
-      <div className='markdown-body' style={{ width: '100%' }}>
+      <span className='markdown-body' style={{ width: '100%' }}>
         <span dangerouslySetInnerHTML={{ __html: markdown }} />
-      </div>
+      </span>
     );
   }
 

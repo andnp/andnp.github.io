@@ -4,6 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
   font-size: 1.1em;
   line-height: 1.6;
+  overflow: hidden;
 }
 
 #root {
@@ -19,13 +20,5 @@ body {
 }
 
 .katex .mathdefault {
-  font-style: italic;
-}
-
-.katex .mopen {
-  font-style: italic;
-}
-
-.katex .mclose {
   font-style: italic;
 }

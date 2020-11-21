@@ -1,7 +1,11 @@
 import { invokeProp } from "../utils/fp";
 
+export const projectRawFilesUrl = (username: string, project: string, branch: string = 'master') => {
+  return `https://raw.githubusercontent.com/${username}/${project}/${branch}`;
+};
+
 export const projectReadmeUrl = (username: string, project: string) => {
-  return `https://raw.githubusercontent.com/${username}/${project}/master/README.md`;
+  return `${projectRawFilesUrl(username, project)}/README.md`;
 };
 
 export const projectUrl = (username: string, project: string) => {
@@ -10,10 +14,6 @@ export const projectUrl = (username: string, project: string) => {
 
 export const projectFilesUrl = (username: string, project: string, branch: string = 'master') => {
   return `${projectUrl(username, project)}/tree/${branch}`;
-}
-
-export const projectImagesUrl = (username: string, project: string, branch: string = 'master') => {
-  return `https://raw.githubusercontent.com/${username}/${project}/${branch}`;
 }
 
 const changeLocalLinks = (url: string, imageUrl: string) => (markdown: string) => {
@@ -47,12 +47,16 @@ const changeLocalLinks = (url: string, imageUrl: string) => (markdown: string) =
   return processed;
 };
 
-export const projectReadme = (username: string, project: string) => {
-  const url = projectReadmeUrl(username, project);
+export const loadMarkdown = (username: string, project: string, file: string) => {
+  const url = `${projectRawFilesUrl(username, project)}/${file}`;
   const projUrl = projectFilesUrl(username, project);
-  const imageUrl = projectImagesUrl(username, project);
+  const imageUrl = projectRawFilesUrl(username, project);
 
   return fetch(url)
     .then(invokeProp('text'))
     .then(changeLocalLinks(projUrl, imageUrl));
+}
+
+export const projectReadme = (username: string, project: string) => {
+  return loadMarkdown(username, project, 'README.md');
 };
