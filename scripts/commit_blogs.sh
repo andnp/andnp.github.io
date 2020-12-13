@@ -1,11 +1,9 @@
 npm run blogs
 
 git checkout -b Blogs
-
 git add src/content/blogs.ts
-CHANGED=$(git diff-index --quiet --cached HEAD)
 
-if [ -z $CHANGED ]; then
+if ! git diff-index --cached --quiet HEAD --; then
   git config user.name "andnp"
   git config user.email "andnpatterson@gmail.com"
   git commit -m "add blog"
