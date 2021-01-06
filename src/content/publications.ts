@@ -1,20 +1,5 @@
 export const publicationData = [
   {
-    "title": "Learning macroscopic brain connectomes via group-sparse factorization",
-    "authors": [
-      "F Aminmansour",
-      "A Patterson",
-      "L Le",
-      "Y Peng",
-      "D Mitchell",
-      "F Pestilli",
-      "..."
-    ],
-    "journal": "Advances in Neural Information Processing Systems,",
-    "year": 2019,
-    "url": ""
-  },
-  {
     "title": "Investigating Objectives for Off-policy Value Estimation in Reinforcement Learning",
     "authors": [
       "A Patterson",
@@ -42,7 +27,7 @@ export const publicationData = [
     "code": "https://github.com/rlai-lab/Regularized-GradientTD"
   },
   {
-    "title": "Learning Macroscopic Brain Connectomes via Group-Sparse Factorization",
+    "title": "Learning macroscopic brain connectomes via group-sparse factorization",
     "authors": [
       "F Aminmansour",
       "A Patterson",
