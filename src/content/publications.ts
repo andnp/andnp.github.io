@@ -27,7 +27,7 @@ export const publicationData = [
     "code": "https://github.com/rlai-lab/Regularized-GradientTD"
   },
   {
-    "title": "Learning Macroscopic Brain Connectomes via Group-Sparse Factorization",
+    "title": "Learning macroscopic brain connectomes via group-sparse factorization",
     "authors": [
       "F Aminmansour",
       "A Patterson",
