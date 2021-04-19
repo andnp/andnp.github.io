@@ -6,7 +6,7 @@
   "dependencies": {
     "@neilsustc/markdown-it-katex": "^0.6.1",
     "@types/node-fetch": "^2.5.7",
-    "antd": "4.14.0",
+    "antd": "4.14.1",
     "bibtex": "0.9.0",
     "github-markdown-css": "4.0.0",
     "highlight.js": "10.7.1",
