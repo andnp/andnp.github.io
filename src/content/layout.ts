@@ -8,6 +8,7 @@ const AboutRoute = once(() => import('../components/routes/about/AboutRoute').th
 const PapersRoute = once(() => import('../components/routes/papers/PapersRoute').then(prop('default')));
 const ProjectsRoute = once(() => import('../components/routes/ProjectsRoute').then(prop('default')));
 const BlogsRoute = once(() => import('../components/routes/BlogsRoute').then(prop('default')));
+const WorkoutRoute = once(() => import('../components/routes/WorkoutRoute').then(prop('default')));
 
 interface AppDefinition extends RouteDefinition, SidebarDefinition {}
 
@@ -26,4 +27,5 @@ export const appDefinition: AppDefinition[] = [
     ]
   },
   { key: 'About', route: AboutRoute },
+  { key: 'Workouts', route: WorkoutRoute as any, private: true }
 ];

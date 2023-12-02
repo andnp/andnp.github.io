@@ -43,6 +43,7 @@ const menuStyles = {
 
 export interface SidebarDefinition {
   key: string;
+  private?: boolean;
   args?: Record<string, unknown>;
   children?: SidebarDefinition[];
 }
@@ -50,6 +51,7 @@ export interface SidebarDefinition {
 interface SidebarDescription {
   key: string;
   title: string;
+  private: boolean;
   children?: SidebarDescription[];
 }
 
@@ -64,9 +66,12 @@ const normalizeDefinition = (definition: SidebarDefinition, parent?: string): Si
     ? `${parent}/${lowerKey}`
     : lowerKey;
 
+  const priv = definition.private !== undefined && definition.private;
+
   return {
     children,
     key,
+    private: priv,
     title: definition.key,
   }
 }
@@ -83,7 +88,9 @@ class Sidebar extends styledComponent(styles) {
 
   public props: SidebarProps;
 
-  private sidebarDescription = this.props.routes.map(def => normalizeDefinition(def));
+  private sidebarDescription = this.props.routes
+    .map(def => normalizeDefinition(def))
+    .filter(def => !def.private);
 
   constructor(props: SidebarProps) {
     super(props);

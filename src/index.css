@@ -4,7 +4,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
   font-size: 1.1em;
   line-height: 1.6;
-  overflow: hidden;
 }
 
 #root {

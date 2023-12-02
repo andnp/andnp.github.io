@@ -5,7 +5,9 @@
   "homepage": "https://andnp.github.io",
   "dependencies": {
     "@neilsustc/markdown-it-katex": "^0.6.1",
+    "@types/gapi": "0.0.39",
     "@types/node-fetch": "^2.5.7",
+    "@types/react-async-script": "^1.2.0",
     "antd": "4.15.0",
     "bibtex": "0.9.0",
     "github-markdown-css": "4.0.0",
@@ -16,6 +18,7 @@
     "markdown-it": "11.0.1",
     "node-fetch": "^2.6.1",
     "react": "16.14.0",
+    "react-async-script": "^1.2.0",
     "react-dom": "16.14.0",
     "react-jss": "10.6.0",
     "react-scripts-ts": "3.1.0",

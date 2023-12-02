@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { SidebarDefinition } from './sidebar/Sidebar';
 
-export type RouteableComponent = React.ComponentClass<{path?: string, args?: Record<string, any>}>;
+export type RouteableComponent = React.ComponentType<{path?: string, args?: Record<string, any>}>;
 
 export interface RouteDefinition {
   key: string;
+  private?: boolean;
   args?: Record<string, unknown>;
   children?: SidebarDefinition[];
   route: () => Promise<RouteableComponent>;
