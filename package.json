@@ -15,7 +15,7 @@
     "jss": "10.6.0",
     "katex": "0.13.2",
     "lodash": "4.17.21",
-    "markdown-it": "11.0.1",
+    "markdown-it": "13.0.2",
     "node-fetch": "^2.6.1",
     "react": "16.14.0",
     "react-async-script": "^1.2.0",
