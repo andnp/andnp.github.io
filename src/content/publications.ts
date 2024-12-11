@@ -1,5 +1,20 @@
 export const publicationData = [
   {
+    "title": "Learning Macroscopic Brain Connectomes via Group-Sparse Factorization.",
+    "authors": [
+      "F Aminmansour",
+      "A Patterson",
+      "L Le",
+      "Y Peng",
+      "D Mitchell",
+      "F Pestilli",
+      "..."
+    ],
+    "journal": "NeurIPS,",
+    "year": 2019,
+    "url": ""
+  },
+  {
     "title": "Investigating Objectives for Off-policy Value Estimation in Reinforcement Learning",
     "authors": [
       "A Patterson",
