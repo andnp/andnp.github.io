@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://andnp.github.io",
   "dependencies": {
-    "@neilsustc/markdown-it-katex": "^0.6.1",
+    "@neilsustc/markdown-it-katex": "^1.0.0",
     "@types/gapi": "0.0.39",
     "@types/node-fetch": "^2.5.7",
     "@types/react-async-script": "^1.2.0",
