@@ -14,7 +14,7 @@
     "highlight.js": "10.7.2",
     "jss": "10.6.0",
     "katex": "0.13.2",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "markdown-it": "11.0.1",
     "node-fetch": "^2.6.1",
     "react": "16.14.0",
